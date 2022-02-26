@@ -9,8 +9,9 @@ class HoaDon extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    public function chitiethoadon(){
-        return $this->hasMany('App\Models\ChiTietHoaDon');
-}
-public $timestamps = false;
+    public $timestamps = false;
+    public function ChiTietHoaDon()
+    {
+        return $this->hasMany(ChiTietHoaDon::class, 'idhoadon');
+    }
 }

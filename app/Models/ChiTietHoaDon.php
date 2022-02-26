@@ -9,8 +9,13 @@ class ChiTietHoaDon extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    public function hoadon(){
-        return $this->belongsTo('App\Models\HoaDon');
-}
-public $timestamps = false;
+    public $timestamps = false;
+    public function HoaDon()
+    {
+        return $this->belongsTo(HoaDon::class, 'idhoadon');
+    }
+    public function SanPham()
+    {
+        return $this->belongsTo(SanPham::class, 'idsanpham');
+    }
 }
