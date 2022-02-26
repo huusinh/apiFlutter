@@ -41,4 +41,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function GioHang()
+    {
+        return $this->hasMany(GioHang::class, 'iduser');
+    }
 }

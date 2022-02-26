@@ -9,4 +9,12 @@ class ChiTietGioHang extends Model
 {
     use HasFactory;
     protected $guarded=[];
+    public function GioHang()
+    {
+        return $this->belongsTo(GioHang::class, 'idgiohang');
+    }
+    public function SanPham()
+    {
+        return $this->belongsTo(SanPham::class, 'idsanpham');
+    }
 }

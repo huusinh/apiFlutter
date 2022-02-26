@@ -3,7 +3,6 @@
 use App\Http\Controllers\APIGioHangController;
 use App\Http\Controllers\APIInfoAccountController;
 use App\Http\Controllers\APIHoaDonController;
-use App\Http\Controllers\APIChiTietHoaDonController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\APISanPhamController;
@@ -33,6 +32,5 @@ Route::post('getInfoAccount' , [APIInfoAccountController::class , 'getInfo']);
 route::get('invoice/getInvoiceList' , [APIHoaDonController::class , 'index']);
 route::post('invoice/newInvoice' , [APIHoaDonController::class , 'store']);
 route::post('invoice/getInvoiceId' , [APIHoaDonController::class , 'gethoadonId']);
-route::post('invoiceDetail/newInvoiceDetail' , [APIChiTietHoaDonController::class ,'store'] );
 route::post('invoice/getListInvoiceByAccountId',  [APIHoaDonController::class , 'getListhoadon']);
 Route::post('gettotal' , [APIGioHangController::class , 'gettotal']);
