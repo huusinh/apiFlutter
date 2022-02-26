@@ -67,6 +67,18 @@ class CreateDatabase extends Migration
             $table->foreignId('idhoadon');
             $table->foreign('idhoadon')->references('id')->on('hoa_dons');
         });
+        Schema::create('dia_chis', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('idtaikhoan');
+            $table->foreign('idtaikhoan')->references('id')->on('users');
+            $table->string('tennguoinhan');
+            $table->string('sodienthoai');
+            $table->string('tinhthanhpho');
+            $table->string('quanhuyen');
+            $table->string('phuongxa');
+            $table->string('diachichitiet');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -82,5 +94,6 @@ class CreateDatabase extends Migration
         Schema::dropIfExists('chi_tiet_gio_hangs');
         Schema::dropIfExists('hoa_dons');
         Schema::dropIfExists('chi_tiet_hoa_dons');
+        Schema::dropIfExists('dia_chis');
     }
 }

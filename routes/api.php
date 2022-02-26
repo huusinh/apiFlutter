@@ -29,6 +29,9 @@ Route::post('deleteproduct',[APIGioHangController::class,'deleteProduct']);
 Route::post('updatesoluong',[APIGioHangController::class,'updatesoluong']);
 
 Route::post('getInfoAccount' , [APIInfoAccountController::class , 'getInfo']);
+Route::post('getAddressAccount' , [APIInfoAccountController::class , 'getAddress']);
+Route::post('updateOrcreateAddressAccount' , [APIInfoAccountController::class , 'updateOrcreateAddress']);
+
 route::get('invoice/getInvoiceList' , [APIHoaDonController::class , 'index']);
 route::post('invoice/newInvoice' , [APIHoaDonController::class , 'store']);
 route::post('invoice/getInvoiceId' , [APIHoaDonController::class , 'gethoadonId']);

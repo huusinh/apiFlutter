@@ -45,4 +45,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(GioHang::class, 'iduser');
     }
+    public function DiaChi()
+    {
+        return $this->hasOne(DiaChi::class, 'idtaikhoan');
+    }
 }

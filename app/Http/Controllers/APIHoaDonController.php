@@ -17,8 +17,7 @@ class APIHoaDonController extends Controller
 {
     public function getListhoadon(Request $request)
     {
-        $dsChiTietHD = HoaDon::join("chi_tiet_hoa_dons", "chi_tiet_hoa_dons.idhoadon", "hoa_dons.id")
-            ->where('hoa_dons.idtaikhoan', '=', $request->post('_idtaikhoan'))
+        $dsChiTietHD = HoaDon::where('hoa_dons.idtaikhoan', '=', $request->post('_idtaikhoan'))
             ->with("ChiTietHoaDon") //load theo khoa' ngoai cua CTHoaDon, no tu them vao`
             ->with("ChiTietHoaDon.SanPham")
             ->get("hoa_dons.*");
