@@ -17,10 +17,14 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('diachi');
-            $table->string('sodienthoai');
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->boolean('GioiTinh');
+            $table->date('NgaySinh');
+            $table->string('DiaChi');
+            $table->string('SDT');
+            $table->integer('Quyen');
+            $table->integer('TrangThai');
+            $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

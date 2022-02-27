@@ -3,6 +3,7 @@
 use App\Http\Controllers\APIGioHangController;
 use App\Http\Controllers\APIInfoAccountController;
 use App\Http\Controllers\APIHoaDonController;
+use App\Http\Controllers\ApiUserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\APISanPhamController;
@@ -37,3 +38,8 @@ route::post('invoice/newInvoice' , [APIHoaDonController::class , 'store']);
 route::post('invoice/getInvoiceId' , [APIHoaDonController::class , 'gethoadonId']);
 route::post('invoice/getListInvoiceByAccountId',  [APIHoaDonController::class , 'getListhoadon']);
 Route::post('gettotal' , [APIGioHangController::class , 'gettotal']);
+
+Route::post('login', [ApiUserController::class, 'login']);
+Route::apiResource('User', ApiUserController::class);
+Route::post('dangki', [ApiUserController::class, 'dangki']);
+Route::post('capnhat/{User}', [ApiUserController::class, 'capnhat']);
